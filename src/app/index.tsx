@@ -2,16 +2,18 @@ import Colors from "@/constants/Colors";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
-import { TASKS } from "@/constants/Tasks";
+import { FilterOptions, TASKS } from "@/constants/Tasks";
 import Header from "@/components/Header";
 import DateSelector from "@/components/DateSelector";
 import FilterTabs from "@/components/FilterTabs";
 import TaskCard from "@/components/TaskCard";
+import { useState } from "react";
 
 const index = () => {
   const insets = useSafeAreaInsets();
+  const [activeFilter, setActiveFilter] = useState<FilterOptions>("All");
   return (
-    <View style={[styles.container, { padding: insets.top }]}>
+    <View style={[styles.container, { paddingTop: insets.top }]}>
       <StatusBar style="light" />
       <FlatList
         data={TASKS}
@@ -24,7 +26,7 @@ const index = () => {
             {/* DateSelector */}
             <DateSelector />
             {/* FiltersTabs */}
-            {/* <FilterTabs selected={activeFilter} onSelect={setActiveFilter} /> */}
+            <FilterTabs selected={activeFilter} onSelect={setActiveFilter} />
           </>
         }
         contentContainerStyle={styles.list}
@@ -41,5 +43,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
   },
-    list: { paddingBottom: 24 }
+  list: { paddingBottom: 24 },
 });
