@@ -1,6 +1,7 @@
-# 729 — Todo App
+# First Mob-App
 
 A dark-themed task management app built with Expo, React Native, and TypeScript. Browse, filter, and track your daily tasks with a clean, modern UI.
+<img width="1240" height="2772" alt="Screenshot_2026-05-24-19-50-00-97_f73b71075b1de7323614b647fe394240 jpg" src="https://github.com/user-attachments/assets/7a98d876-d55c-40ae-9eac-7d813980d755" />
 
 ## Features
 
