@@ -1,56 +1,65 @@
-# Welcome to your Expo app 👋
+# 729 — Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A dark-themed task management app built with Expo, React Native, and TypeScript. Browse, filter, and track your daily tasks with a clean, modern UI.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Task List** — Scrollable list of tasks with status, category, time, and icon
+- **Date Selector** — Horizontal date picker to switch between days
+- **Filter Tabs** — Filter tasks by All, To Do, In Progress, or Completed
+- **Status Indicators** — Color-coded badges (Done / In Prog / To-do)
+- **Dark Theme** — Amber-gold accent on a rich dark background
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- [Expo](https://expo.dev) (SDK 56) with Expo Router
+- React Native (0.85) + TypeScript
+- `@expo/vector-icons` (Ionicons)
+- `expo-router` (file-based routing)
+- `react-native-safe-area-context`
+- `react-native-gesture-handler` & `react-native-reanimated`
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Getting Started
 
 ```bash
-npm run reset-project
+npm install
+npx expo start
+```
+> Make sure the dev mode is on, on mobile. And USB-Debugging is On.
+
+Then open the app in:
+- [Expo Go](https://expo.dev/go) (scan QR code)
+- Android emulator (`npx expo start --android`)
+- iOS simulator (`npx expo start --ios`)
+- Web browser (`npx expo start --web`)
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── _layout.tsx      # Root layout (header hidden)
+│   └── index.tsx        # Home screen with FlatList
+├── components/
+│   ├── Header.tsx        # "Today's Task" title + back/notif buttons
+│   ├── DateSelector.tsx  # Horizontal date picker
+│   ├── FilterTabs.tsx    # All / To do / In Prog / Completed tabs
+│   └── TaskCard.tsx      # Individual task card
+├── constants/
+│   ├── Colors.ts         # Dark theme color palette
+│   └── Tasks.ts          # Task types, mock data, filter options
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Scripts
 
-### Other setup steps
+| Command           | Description          |
+| ----------------- | -------------------- |
+| `npm start`       | Start Expo dev server |
+| `npm run android` | Start on Android      |
+| `npm run ios`     | Start on iOS          |
+| `npm run web`     | Start on web          |
+| `npm run lint`    | Run ESLint            |
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## License
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+MIT
